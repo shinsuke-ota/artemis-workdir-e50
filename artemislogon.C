@@ -18,7 +18,7 @@
 
    // load libraries
    gSystem->Load("libuser");
-   gSystem->Load("libCAT");
+   // gSy/stem->Load("libCAT");
    //gSystem->Load("{liborig}"); // when use original library
 
    TCatCmdFactory *cf = TCatCmdFactory::Instance();

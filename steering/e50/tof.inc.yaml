@@ -1,0 +1,56 @@
+#
+# @file : tof.itmpl.yaml
+# @brief: include file for tof detectors 
+# 
+# Created      : 2023-06-13 15:00:16 JST
+# Last Modified: 2023-06-14 14:38:12 JST
+#
+# @description
+#  utof
+#  dtof
+#  ltof
+
+
+Processor:
+  - include:
+      name: ../itmpl/ds-qtc.itmpl.yaml
+      replace:
+        DETNAME: utof
+        CATID: 11
+        MAXDID: 1 # two detectors
+        TRANGE: [-100,100,0]
+  - include:
+      name: ../itmpl/ds-qtc.itmpl.yaml
+      replace:
+        DETNAME: dtof
+        CATID: 12
+        MAXDID: 1 # two detectors
+        TRANGE: [-100,100,0]
+  - include:
+      name: ../itmpl/ds-qtc.itmpl.yaml
+      replace:
+        DETNAME: ltof
+        CATID: 13
+        MAXDID: 5 # six detectors
+        TRANGE: [-100,100,0]
+  - include:
+      name: ../itmpl/ds-qtc.itmpl.yaml
+      replace:
+        DETNAME: rpc
+        CATID: 14
+        MAXDID: 7 # eight detectors
+        TRANGE: [-100,100,0]
+  - name: tofud
+    type: art::TTimingSubtractionProcessor
+    parameter:
+      InputCollection: dtof  # [TString] collection including timing information (inherits from ITiming)
+      MaxDetID: 2  # [Int_t] maximum detID of input
+      OutputCollection: tofud # [TString] output collection name
+      OutputTransparency: 0  # [Bool_t] Output is persistent if false (default)
+      StartTimingCollection: utof  # [TString] collection including reference timing information
+      StartTimingDetID: -1  # [Int_t] detID of reference timing source (if -1 use any id)
+      UseMultipleStartTiming: 11  # [Int_t] enables multihit start timing treatment. If non-zero, output class is art::TTimeDiffernce, else, it is identical to input. In the latter case, both Get/SetTiming() must be available in that class.
+      UseStartAsTimestamp: 1  # [Int_t] timestamp is start (if 1) or end (if 0)
+      ValidTimeRange: [0, 0, 0]  # [vector<Double_t>] [min,max,offset] => Tmin = offset + min etc. ignored if min == max
+      Verbose: 1  # [Int_t] verbose level (default 1 : non quiet)
+    

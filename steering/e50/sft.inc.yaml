@@ -1,0 +1,29 @@
+#
+# @file : sft.inc.yaml
+# @brief: analysis for scintillating fiber tracker
+# 
+# Created      : 2023-06-13 15:00:16 JST
+# Last Modified: 2023-06-14 14:38:37 JST
+
+Processor:
+  - name: loadprm_sft_ch2ns
+    type: art::TParameterArrayLoader
+    parameter:
+      Name:     prm_sft_ch2ns
+      Type:     art::TAffineConverter
+      FileName: prm/sft/ch2ns.dat
+  - name: proc_sft_raw
+    type: art::TTimingChargeMappingProcessor
+    parameter:
+      InputCollection: catdata
+      CatID:              21
+      TimingTypeID:       0
+      OutputCollection:   sft_raw
+      OutputTransparency: 0
+  - name: proc_sft_cal
+    type: art::TTimingChargeCalibrationProcessor
+    parameter:
+      InputCollection:      sft_raw
+      OutputCollection:     sft_cal
+      TimingConverterArray: prm_sft_ch2ns
+      OutputTransparency:   0

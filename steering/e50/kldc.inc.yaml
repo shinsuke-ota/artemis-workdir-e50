@@ -1,0 +1,27 @@
+#
+# @file : bdc.inc.yaml
+# @brief: analysis for a single bdc
+# 
+# Created      : 2023-06-13 09:09:01 JST
+# Last Modified: 2023-06-14 14:39:02 JST
+#
+#
+
+Processor:
+  - include:
+      name: uuvv.inc.yaml
+      replace:
+        DCNAME: kldc1
+        CATDATA: catdata
+        CAT_ID: 33
+        START_TIME_COLLECTION: dtof
+        SUB_TIME_RANGE: [-100.,100.,0]         
+  - include:
+      name: uuvv.inc.yaml
+      replace:
+        DCNAME: kldc2
+        CATDATA: catdata
+        CAT_ID: 34
+        START_TIME_COLLECTION: dtof
+        SUB_TIME_RANGE: [-100.,100.,0]         
+

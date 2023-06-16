@@ -1,0 +1,66 @@
+#
+# @file : ds-qtc.inc.yaml
+# @brief: double signal detecrtors with charge by QTC (or charge combined with timing)
+# 
+# Created      : 2023-06-13 15:00:16 JST
+# Last Modified: 2023-06-14 11:36:35 JST
+#
+# @description
+#  template for analysis of double signal detectors
+#  subscription _l is for timing type id 0
+#  subscription _r is for timing type id 0
+#  
+#  macros
+#  DETNAME : detector name
+#  CATID   : category id
+#  MAXDID  : maximum id of detectors
+#  TRANGE  : time range for combining two signals
+
+Processor:
+  - name: loadprm_@DETNAME@_ch2ns
+    type: art::TParameterArrayLoader
+    parameter:
+      Name:     prm_@DETNAME@_ch2ns
+      Type:     art::TAffineConverter
+      FileName: prm/@DETNAME@/ch2ns.dat
+  - name: proc_@DETNAME@_raw_l
+    type: art::TTimingChargeMappingProcessor
+    parameter:
+      InputCollection: catdata
+      CatID:              @CATID@
+      TimingTypeID:       0
+      OutputCollection:   @DETNAME@_raw_l
+      OutputTransparency: 0
+  - name: proc_@DETNAME@_cal
+    type: art::TTimingChargeCalibrationProcessor
+    parameter:
+      InputCollection:      @DETNAME@_raw_l
+      OutputCollection:     @DETNAME@_cal_l
+      TimingConverterArray: prm_@DETNAME@_ch2ns
+      ChargeConverterArray: prm_@DETNAME@_ch2ns
+      OutputTransparency:   0
+  - name: proc_@DETNAME@_raw_r
+    type: art::TTimingChargeMappingProcessor
+    parameter:
+      InputCollection: catdata
+      CatID:              @CATID@
+      TimingTypeID:       1
+      OutputCollection:   @DETNAME@_raw_r
+      OutputTransparency: 0
+  - name: proc_@DETNAME@_cal
+    type: art::TTimingChargeCalibrationProcessor
+    parameter:
+      InputCollection:      @DETNAME@_raw_r
+      OutputCollection:     @DETNAME@_cal_r
+      TimingConverterArray: prm_@DETNAME@_ch2ns
+      ChargeConverterArray: prm_@DETNAME@_ch2ns
+      OutputTransparency:   0
+  - name: proc_@DETNAME@_combination
+    type: art::TTwoSidedPlasticCalibrationProcessor
+    parameter:
+      InputCollection1: @DETNAME@_cal_l
+      InputCollection2: @DETNAME@_cal_r
+      OutputCollection: @DETNAME@
+      DetIDRange:       [0,@MAXDID@]
+      ValidTimeRange: @TRANGE@  # [FloatVec_t] [min,max,offset] => Tmin = offset + min etc. ignored if min == max
+      
