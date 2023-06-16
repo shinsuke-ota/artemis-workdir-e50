@@ -9,19 +9,19 @@
 
 Processor:
   - include:
-      name: uuvv.inc.yaml
+      name: ../itmpl/uuvv.itmpl.yaml
       replace:
         DCNAME: kldc1
         CATDATA: catdata
-        CAT_ID: 33
-        START_TIME_COLLECTION: dtof
-        SUB_TIME_RANGE: [-100.,100.,0]         
+        CATID: 33
+        STDET: dtof
+        TRANGE: [-100.,100.,0]         
   - include:
-      name: uuvv.inc.yaml
+      name: ../itmpl/uuvv.itmpl.yaml
       replace:
         DCNAME: kldc2
         CATDATA: catdata
-        CAT_ID: 34
-        START_TIME_COLLECTION: dtof
-        SUB_TIME_RANGE: [-100.,100.,0]         
+        CATID: 34
+        STDET: dtof
+        TRANGE: [-100.,100.,0]         
 

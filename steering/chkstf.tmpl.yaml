@@ -26,8 +26,11 @@ Processor:
       Input: catdata  # [TString] The name of input categorized data
       Output: hbd  # [TString] The name of output collection
       OutputTransparency: 0  # [Bool_t] Output is persistent if false (default)
-      OutputClass: art::TStreamingHeartBeatDelimiter  # [TString] The name of outp      Verbose: 0  # [Int_t] verbose level (default 1 : non quiet)
+      OutputClass: art::TStreamingHeartBeatDelimiter  # [TString] The name of outp      
+      Verbose: 0  # [Int_t] verbose level (default 1 : non quiet)
   - include: e50/tof.inc.yaml
+  - include: e50/bdc.inc.yaml
+  - include: e50/kldc.inc.yaml
     
       
       
@@ -51,12 +54,12 @@ Processor:
 #      StopIf: 0  # [Int_t] stop analysis if gate is (0) false, (1) true
 #      Verbose: 1  # [Int_t] verbose level (default 1 : non quiet)
 
-#  - name: hist_pla_gr
-#    type: art::TTreeProjectionProcessor
-#    parameter:
-#      Type: art::TTreeProjection
-#      FileName: hist/pla/pla_gr.hist.yaml
-#
+  - name: hist
+    type: art::TTreeProjectionProcessor
+    parameter:
+      Type: art::TTreeProjection
+      FileName: hist/hist.def.yaml
+
   - name: outputtree
     type: art::TOutputTreeProcessor
     parameter:

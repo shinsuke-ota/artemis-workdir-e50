@@ -18,7 +18,7 @@ Processor:
         DETNAME: utof
         CATID: 11
         MAXDID: 1 # two detectors
-        TRANGE: [-100,100,0]
+        TRANGE: [-1000,1000,0]
   - include:
       name: ../itmpl/ds-qtc.itmpl.yaml
       replace:

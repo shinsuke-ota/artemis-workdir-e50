@@ -1,0 +1,9 @@
+group:
+  - name: ltof
+    title: Large TOF
+    contents:
+      - name: ltof_lr
+        title: L vs R LTOF
+        async: 1
+        x: ["ltof_cal_l.fTiming", 500,0.,512e3]
+        y: ["ltof_cal_l.fTiming", 500,0.,512e3]

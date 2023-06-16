@@ -1,0 +1,24 @@
+- x1:
+    z: 0
+    nWire: 116
+    cellSize: 20.8
+    angle : 180
+    center: 58.
+- x2:
+    z: 10
+    nWire: 116
+    cellSize: 20.8
+    angle: 58.5
+    center: 58.5
+- u1:
+    z: 250
+    nWire: 109
+    cellSize: 20.8
+    angle : 174
+    center: 58.
+- v1:
+    z: 270
+    nWire: 109
+    cellSize: 20.8
+    angle: 186.
+    center: 58.5

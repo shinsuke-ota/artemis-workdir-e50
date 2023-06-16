@@ -16,3 +16,5 @@ src/compile.log
 *.root
 *.pdf
 *.ps
+.zsh_history
+rawdata

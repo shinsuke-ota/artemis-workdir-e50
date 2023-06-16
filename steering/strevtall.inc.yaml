@@ -62,4 +62,64 @@ Processor:
         MAX: *maxevt
         DIR: 09
         NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 10
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 11
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 12
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 13
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 14
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 15
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 16
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 17
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 18
+        NUM: *num
+  - include:
+      name: strevt.inc.yaml
+      replace:
+        MAX: *maxevt
+        DIR: 19
+        NUM: *num
 

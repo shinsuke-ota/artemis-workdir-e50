@@ -8,19 +8,19 @@
 #
 Processor:
   - include:
-      name: ../itmpl/xxuv.inc.yaml
+      name: ../itmpl/xxuv.itmpl.yaml
       replace:
         DCNAME: bdc1
         CATDATA: catdata
-        CAT_ID: 31
-        START_TIME_COLLECTION: dtof
-        SUB_TIME_RANGE: [-100.,100.,0]         
+        CATID: 31
+        STDET: dtof
+        TRANGE: [-100.,100.,0]         
   - include:
-      name: ../itmpl/xxuv.inc.yaml
+      name: ../itmpl/xxuv.itmpl.yaml
       replace:
         DCNAME: bdc2
         CATDATA: catdata
-        CAT_ID: 32
-        START_TIME_COLLECTION: dtof
-        SUB_TIME_RANGE: [-100.,100.,0]         
+        CATID: 32
+        STDET: dtof
+        TRANGE: [-100.,100.,0]         
 

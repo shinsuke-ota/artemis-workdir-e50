@@ -52,7 +52,7 @@ Processor:
     type: art::TTimingChargeMappingProcessor
     parameter:
       InputCollection: @CATDATA@
-      CatID:              @CAT_ID@
+      CatID:              @CATID@
       TimingTypeID:       0
       OutputCollection:   @DCNAME@_raw
       OutputTransparency: 0

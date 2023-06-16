@@ -17,7 +17,7 @@
    gSystem->SetIncludePath(incpath);
 
    // load libraries
-   gSystem->Load("libuser");
+   gSystem->Load("libartshare");
    // gSy/stem->Load("libCAT");
    //gSystem->Load("{liborig}"); // when use original library
 
