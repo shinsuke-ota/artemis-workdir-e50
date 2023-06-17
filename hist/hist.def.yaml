@@ -7,3 +7,42 @@ group:
         async: 1
         x: ["ltof_cal_l.fTiming", 500,0.,512e3]
         y: ["ltof_cal_l.fTiming", 500,0.,512e3]
+  - name: hitpat
+    title: Hit Pattern 
+    contents:
+      - name: utof_l
+        title: UTOF_L ID
+        x: ["utof_raw_l.fID",2,-0.5,1.5]
+      - name: utof_r
+        title: UTOF_R ID
+        x: ["utof_raw_r.fID",2,-0.5,1.5]
+      - name: dtof_l
+        title: DTOF_L ID
+        x: ["dtof_raw_l.fID",2,-0.5,1.5]
+      - name: dtof_r
+        title: DTOF_R ID
+        x: ["dtof_raw_r.fID",2,-0.5,1.5]
+      - name: ltof_l
+        title: LTOF_L ID
+        x: ["ltof_raw_l.fID",2,-0.5,1.5]
+      - name: ltof_r
+        title: LTOF_R ID
+        x: ["ltof_raw_r.fID",2,-0.5,1.5]
+      - name: t0_l
+        title: T0_L ID
+        x: ["t0_raw_l.fID",2,-0.5,1.5]
+      - name: t0_r
+        title: T0_R ID
+        x: ["t0_raw_r.fID",2,-0.5,1.5]
+      - name: bdc1
+        title: BDC1 ID
+        x: ["bdc1_raw.fID",445,-0.5,444.5]
+      - name: bdc2
+        title: BDC2 ID
+        x: ["bdc2_raw.fID",445,-0.5,444.5]
+      - name: kldc1
+        title: KLDC1 ID
+        x: ["kldc1_raw.fID",512,-0.5,511.5]
+      - name: kldc2
+        title: KLDC2 ID
+        x: ["kldc2_raw.fID",512,-0.5,511.5]
